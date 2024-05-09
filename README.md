@@ -34,3 +34,4 @@ Descrição: Cansou de ser Hackeado? Tente gerar senhas mais fortes para os seus
 2. Abra a pasta com os projetos `cd .\Projetos-em-Python\`
 3. Abra a pasta do respectivo projeto, nesse caso, projeto2 `cd .\projeto3\`
 4. Execute usando `python .\projeto3.py`
+
