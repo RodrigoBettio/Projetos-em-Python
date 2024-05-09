@@ -1,13 +1,9 @@
-# Jogo da Forca: Implemente uma versão simples do jogo da forca. 
-#O programa começa com uma palavra oculta (o usuário não vê) e 
-#o usuário tenta adivinhar a palavra, letra por letra. 
-#O usuário tem um número limitado de tentativas para adivinhar toda a palavra.
 import random
 def escolherPalavra():
     from lista_palavras import lista_palavras
     return random.choice(lista_palavras)
 
-def forca():
+def forca(jogador):
     palavra = escolherPalavra()
     letras_usuario = []
     chances = 6
@@ -25,7 +21,7 @@ def forca():
                 print("_", end=" ")
         
         print(f"\nEssas letras já foram utilizadas: {letras_usuario}\n")
-        tentativa = input("Tente adivinhar uma letra para a palavra:")
+        tentativa = input(f"Jogador{jogador}, tente adivinhar uma letra para a palavra:")
         letras_usuario.append(tentativa)
 
         if tentativa not in palavra:
@@ -39,12 +35,33 @@ def forca():
         if chances == 0 or ganhou:
             break
  
-    if ganhou:
-        print(f"Parabens, você ganhou restando {chances} chances, a palavra era: {palavra}")
-        
+    return chances
+
+def menu():
+    print("Bem-vindo ao Jogo da Forca!")
+    print("Escolha uma opção:")
+    print("1 - Jogar contra um amigo")
+    print("2 - Jogar sozinho")
+
+    opcao = input("Escolha a opção desejada: ")
+
+    if opcao == '1':
+        chances_jogador1 = forca(1)
+        chances_jogador2 = forca(2)
+
+        if chances_jogador1 < chances_jogador2:
+            print(f"Parabéns, Jogador 1 venceu com {chances_jogador1} chances restantes!")
+        elif chances_jogador2 < chances_jogador1:
+            print(f"Parabéns, Jogador 2 venceu com {chances_jogador2} chances restantes!")
+        else:
+            print("Empate! Ambos jogadores gastaram o mesmo número de chances.")
+
+    elif opcao == '2':
+        chances_jogador1 = forca(1)
+        print(f"Você jogou sozinho e gastou {chances_jogador1} chances.")
+
     else:
-        print(f"\nAcabaram suas chances, você perdeu! A palavra era:{palavra}")
-        print(fases[0])
-        
-            
-forca()
+        print("Opção inválida. Por favor, escolha uma opção válida.")
+        menu()
+
+menu()
