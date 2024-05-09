@@ -32,6 +32,13 @@ Descrição: Cansou de ser Hackeado? Tente gerar senhas mais fortes para os seus
 ### Como rodar o Projeto?
 1. Abra o terminal e digite: `https://github.com/RodrigoBettio/Projetos-em-Python.git`
 2. Abra a pasta com os projetos `cd .\Projetos-em-Python\`
-3. Abra a pasta do respectivo projeto, nesse caso, projeto2 `cd .\projeto3\`
+3. Abra a pasta do respectivo projeto, nesse caso, projeto3 `cd .\projeto3\`
 4. Execute usando `python .\projeto3.py`
 
+## Forca
+Descrição: Jogue um jogo de forca no terminal
+### Como rodar o Projeto? 
+1. Abra o terminal e digite: `https://github.com/RodrigoBettio/Projetos-em-Python.git`
+2. Abra a pasta com os projetos `cd .\Projetos-em-Python\`
+3. Abra a pasta do respectivo projeto, nesse caso, projeto4 `cd .\projeto4\`
+4. Execute usando `python .\projeto4.py`
