@@ -9,6 +9,8 @@ Este repositório contém diversos projetos em Python desenvolvidos para fins de
   - [Como rodar o Projeto?](#como-rodar-o-projeto-1)
 - Projeto 3 - [Gerador de Senhas Fortes](#gerador-de-senhas-fortes)
   - [Como rodar o Projeto?](#como-rodar-o-projeto-2)
+- Projeto 4 - [Jogo da Forca](#forca)
+  - [Como rodar o Projeto?](#como-rodar-o-projeto-3)
 
 ## Tesouro Perdido
 Descrição: Há um tesouro perdido na ilha, será que você consegue adivinhar os caminhos certos para chegar até o tesouro? 
