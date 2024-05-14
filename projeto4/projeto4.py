@@ -7,8 +7,6 @@ def forca(jogador):
     palavra = escolherPalavra()
     letras_usuario = []
     chances = 6
-    from forca_imagens import imagem1
-    print(imagem1)  
     from forca_imagens import fases
     while True:
         faseCorreta = fases[chances]
@@ -21,7 +19,7 @@ def forca(jogador):
                 print("_", end=" ")
         
         print(f"\nEssas letras já foram utilizadas: {letras_usuario}\n")
-        tentativa = input(f"Jogador{jogador}, tente adivinhar uma letra para a palavra:")
+        tentativa = input(f"Jogador{jogador}, tente adivinhar uma letra para a palavra:").strip()
         letras_usuario.append(tentativa)
 
         if tentativa not in palavra:
@@ -32,13 +30,19 @@ def forca(jogador):
             if letra not in letras_usuario:
                 ganhou = False
 
-        if chances == 0 or ganhou:
+        if ganhou:
+            print("\nParabéns, você acertou a palavra!")
+            break
+
+        if chances == 0:
+            print(f"\nA palavra correta era: {palavra}")
             break
  
     return chances
 
 def menu():
-    print("Bem-vindo ao Jogo da Forca!")
+    from forca_imagens import imagem1
+    print(imagem1)
     print("Escolha uma opção:")
     print("1 - Jogar contra um amigo")
     print("2 - Jogar sozinho")
@@ -49,16 +53,19 @@ def menu():
         chances_jogador1 = forca(1)
         chances_jogador2 = forca(2)
 
-        if chances_jogador1 < chances_jogador2:
-            print(f"Parabéns, Jogador 1 venceu com {chances_jogador1} chances restantes!")
-        elif chances_jogador2 < chances_jogador1:
-            print(f"Parabéns, Jogador 2 venceu com {chances_jogador2} chances restantes!")
+        if chances_jogador1 > chances_jogador2:
+            print(f"\nParabéns, Jogador 1 venceu com {chances_jogador1} chances restantes!")
+            print(f"O jogador 2 tinha {chances_jogador2} chances")
+        elif chances_jogador2 > chances_jogador1:
+            print(f"\nParabéns, Jogador 2 venceu com {chances_jogador2} chances restantes!")
+            print(f"O jogador 1 tinha {chances_jogador1} chances")
         else:
             print("Empate! Ambos jogadores gastaram o mesmo número de chances.")
 
     elif opcao == '2':
         chances_jogador1 = forca(1)
-        print(f"Você jogou sozinho e gastou {chances_jogador1} chances.")
+        print(f"Você jogou sozinho e sobraram {chances_jogador1} chances.")
+
 
     else:
         print("Opção inválida. Por favor, escolha uma opção válida.")
