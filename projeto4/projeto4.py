@@ -64,7 +64,7 @@ def menu():
 
     elif opcao == '2':
         chances_jogador1 = forca(1)
-        print(f"Você jogou sozinho e sobraram {chances_jogador1} chances.")
+        print(f"Você jogou sozinho e sobraram {chances_jogador1} chances. ")
 
 
     else:
