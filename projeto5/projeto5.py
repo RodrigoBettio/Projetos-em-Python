@@ -29,7 +29,7 @@ def codificar():
         if indice == -1:
             mensagem.append(-1)
         else:
-            indice += numero
+            indice = (indice + numero) %len(alfabeto)
             mensagem.append(indice)
     codificado = "".join([alfabeto[i] for i in mensagem]) 
     print(f"A frase codificada é:{codificado}")
@@ -46,9 +46,9 @@ def decodificar():
         if indice == -1:
             mensagem.append(-1)
         else:
-            indice -= numero
+            indice = (indice - numero)%len(alfabeto)
             mensagem.append(indice)
-    codificado = "".join([alfabeto[i] for i in mensagem])
+    codificado = "".join([alfabeto[i] if  i != -1 else ' ' for i in mensagem])
     print(f"A frase decodificada é: {codificado}")
 
 def listagem_palavra():
