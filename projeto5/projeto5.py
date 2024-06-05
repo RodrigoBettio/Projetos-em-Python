@@ -1,14 +1,20 @@
 from imagens import imagem1
 print(imagem1)
 def cifra():
-    entrada = input("Você deseja [codificar] ou [decodificar] a mensagem?\n").strip().lower()
-    if entrada == "codificar":
-        codificar()
-    elif entrada == "decodificar":
-        decodificar()
-    else:
-        print("Tente novamente")
-        cifra()
+    while True:
+        entrada = input("Você deseja [codificar] ou [decodificar] a mensagem?\n").strip().lower()
+        if entrada == "codificar":
+            codificar()
+        elif entrada == "decodificar":
+            decodificar()
+        else:
+            print("Opção inválida. Tente novamente.")
+            continue
+        
+        continuar = input("Você deseja realizar outra operação? [sim/não]\n").strip().lower()
+        if continuar != 'sim':
+            print("Encerrando o programa. Até mais!")
+            break
     
     #Usuário digita se quer codificar ou decodificar 
     #Usuario digita a frase
@@ -18,11 +24,16 @@ def codificar():
     alfabeto, lista_palavra, posicoes = listagem_palavra()
     mensagem = []
     numero = int(input("Qual o número que você quer para codificar sua mensagem?\n"))
+    
     for indice in posicoes:
-        indice += numero
-        mensagem.append(indice)
-    codificado = "".join([alfabeto[i] for i in mensagem])
-    print(f"A frase codificada é: {codificado}")
+        if indice == -1:
+            mensagem.append(-1)
+        else:
+            indice += numero
+            mensagem.append(indice)
+    codificado = "".join([alfabeto[i] for i in mensagem]) 
+    print(f"A frase codificada é:{codificado}")
+    print(mensagem)
         #Pegar as posições 
         #Aumentar o número de vezes que o usuário pedir
         #Imprimir o alfabeto com as novas posições
@@ -30,16 +41,19 @@ def codificar():
 def decodificar():
     alfabeto, lista_palavra, posicoes = listagem_palavra()
     mensagem = []
-    numero = int(input("Qual o número que você quer para codificar sua mensagem?\n"))
+    numero = int(input("Qual o número que você quer para decodificar sua mensagem?\n"))
     for indice in posicoes:
-        indice -= numero
-        mensagem.append(indice)
+        if indice == -1:
+            mensagem.append(-1)
+        else:
+            indice -= numero
+            mensagem.append(indice)
     codificado = "".join([alfabeto[i] for i in mensagem])
     print(f"A frase decodificada é: {codificado}")
 
 def listagem_palavra():
-    alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    palavra = input("Qual frase gostaria de codificar?\n").strip().lower()
+    alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',' ']
+    palavra = input("Qual frase gostaria você gostaria de enviar?\n").lower()
     lista_palavra = []
     posicoes = []
 
@@ -47,7 +61,10 @@ def listagem_palavra():
         lista_palavra.append(letra) 
 
     for letra in palavra:
-        if letra in alfabeto:
+        if letra == " ":
+            posicaoEspaco = -1
+            posicoes.append(posicaoEspaco)
+        elif letra in alfabeto:
             posicao = alfabeto.index(letra)
             posicoes.append(posicao)
         else:
