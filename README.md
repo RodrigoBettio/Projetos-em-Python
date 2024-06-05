@@ -11,7 +11,8 @@ Este repositório contém diversos projetos em Python desenvolvidos para fins de
   - [Como rodar o Projeto?](#como-rodar-o-projeto-2)
 - Projeto 4 - [Jogo da Forca](#forca)
   - [Como rodar o Projeto?](#como-rodar-o-projeto-3)
-
+- Projeto 4 - [Cifra de César](#cifra-de-césar)
+  - [Como rodar o Projeto?](#como-rodar-o-projeto-4)
 ## Tesouro Perdido
 Descrição: Há um tesouro perdido na ilha, será que você consegue adivinhar os caminhos certos para chegar até o tesouro? 
 ### Como rodar o Projeto?
@@ -44,3 +45,11 @@ Descrição: Jogue um jogo de forca no terminal
 2. Abra a pasta com os projetos `cd .\Projetos-em-Python\`
 3. Abra a pasta do respectivo projeto, nesse caso, projeto4 `cd .\projeto4\`
 4. Execute usando `python .\projeto4.py`
+
+## Cifra de César
+Descrição: Precisa conversar com seu colega codificando e decodificando as mensagens? Experiemente fazer igual o Imperador Júlio César
+### Como rodar o Projeto? 
+1. Abra o terminal e digite: `https://github.com/RodrigoBettio/Projetos-em-Python.git`
+2. Abra a pasta com os projetos `cd .\Projetos-em-Python\`
+3. Abra a pasta do respectivo projeto, nesse caso, projeto4 `cd .\projeto5\`
+4. Execute usando `python .\projeto5.py`
