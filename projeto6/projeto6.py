@@ -50,8 +50,14 @@ def coletar_lances(item):
             break
     return lances
 
-def determinar_vencedor(lances):
-    return max(lances, key=lances.get)
+def determinar_vencedor(lances): #Gerada com IA para conferir empates
+    maior_lance = max(lances.values())
+    vencedores_empatados = [nome for nome, lance in lances.items() if lance == maior_lance]
+
+    if len(vencedores_empatados) > 1:
+        return "Empate entre: " + ", ".join(vencedores_empatados)  # Retorna uma string indicando o empate
+    else:
+        return vencedores_empatados[0]  # Retorna o único vencedor
 
 def exibir_resultados(vencedores, lista_lances, itens):
     os.system("cls")
