@@ -17,8 +17,9 @@ def menu():
     cartas_usuario = []
     cartas_dealer = []
     distribuir_inicial(cartas_usuario, cartas_dealer)
-    print(f"Suas cartas são: {cartas_usuario} (Valores)")
-    print(f"As cartas do dealer são: {cartas_dealer} (Valores)")
+    print(f"Suas cartas são: {cartas_usuario}")
+    print(f"As cartas do dealer são: {cartas_dealer}")
+    soma_dealer = cartas_dealer[0]
     continuar = "parar"
     while True:
         continuar = input("Você deseja \"Continuar\" ou \"Parar\"?\n").strip().lower()
@@ -71,16 +72,15 @@ def conferir_resultado(cartas_usuario, cartas_dealer):
     for x in cartas_dealer:
         soma_dealer += x
 
-    if soma_dealer == 21 and soma_dealer == soma_usuario:
-        print("Deu empate")
-    elif soma_usuario >21:
+    if soma_usuario > 21:
         print("Você estourou os 21.\n A casa venceu. Próxima?")
-    elif soma_dealer > 21 and soma_usuario <=21: 
+    elif soma_dealer > 21 and soma_usuario <= 21:
         print("Você venceu, parabéns")
-    elif soma_dealer > soma_usuario and soma_dealer <=21:
+    elif soma_dealer == soma_usuario and soma_dealer <= 21 and soma_usuario <= 21: 
+        print("Deu empate")
+    elif soma_dealer > soma_usuario and soma_dealer <= 21:
         print(f"A soma de suas cartas {soma_usuario}. É menor do que as da casa {soma_dealer}")
         print("A casa venceu. Próxima?")
-    
     return cartas_usuario, cartas_dealer, soma_usuario, soma_dealer
 
 
