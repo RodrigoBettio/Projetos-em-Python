@@ -28,19 +28,22 @@ def menu():
         elif continuar == "continuar":
             distribuir_carta_usuario(cartas_usuario)
             print(f"Essas são suas cartas:{cartas_usuario}= ", end="")
-            cartas_usuario, cartas_dealer, soma_usuario, soma_dealer = conferir_resultado(cartas_usuario, cartas_dealer)
-            print(f"{soma_usuario}\n")
-            if soma_usuario > 21 or (soma_dealer == 21 and soma_dealer == soma_usuario) or (soma_dealer > 21 and soma_usuario <=21) or (soma_dealer > soma_usuario and soma_dealer <=21):
+            soma_usuario, soma_dealer = calcular_somas(cartas_usuario, cartas_dealer)
+            verificar_resultado(soma_usuario, soma_dealer)
+            print(f"{soma_usuario}\n")  
+            if soma_usuario > 21 or (soma_dealer == 21 and soma_dealer == soma_usuario) or (soma_dealer > 21 and soma_usuario <= 21) or (soma_dealer > soma_usuario and soma_dealer <= 21):
                 break
         else:
             print("Tente novamente. Você digitou errado.")
-            print(cartas_usuario)
+            print(cartas_usuario)  
+
     if continuar == "parar":
-        while soma_dealer <17:
+        while soma_dealer < 17:
             distribuir_carta_dealer(cartas_dealer)
-            cartas_usuario, cartas_dealer, soma_usuario, soma_dealer = conferir_resultado(cartas_usuario, cartas_dealer)
-            print(f"Essas são as cartas da casa:{cartas_dealer} = ", end="")
-            print(soma_dealer)
+            soma_usuario, soma_dealer = calcular_somas(cartas_usuario, cartas_dealer)  # Atualiza a soma do dealer aqui
+        print(f"Essas são as cartas da casa: {cartas_dealer} = {soma_dealer}")
+        verificar_resultado(soma_usuario, soma_dealer)
+
 
 def distribuir_inicial(cartas_usuario, cartas_dealer):
     """Distribui a mão inicial. 2 cartas ao usuário e 1 carta ao Dealer"""
@@ -61,28 +64,23 @@ def distribuir_inicial(cartas_usuario, cartas_dealer):
     
     return cartas_usuario, cartas_dealer
 
-def conferir_resultado(cartas_usuario, cartas_dealer):
-    """Compara os montes do Usuário e do Dealer e imprime o seu resultado"""
-    soma_dealer = 0
-    soma_usuario = 0
+def calcular_somas(cartas_usuario, cartas_dealer):
+    """Calcula as somas das cartas do usuário e do dealer."""
+    soma_usuario = sum(cartas_usuario)
+    soma_dealer = sum(cartas_dealer)
+    return soma_usuario, soma_dealer
 
-    for i in cartas_usuario:
-        soma_usuario += i
-    
-    for x in cartas_dealer:
-        soma_dealer += x
-
+def verificar_resultado(soma_usuario, soma_dealer):
+    """Compara as somas e determina o resultado do jogo."""
     if soma_usuario > 21:
-        print("Você estourou os 21.\n A casa venceu. Próxima?")
+        print("Você estourou os 21.\nA casa venceu. Próxima?")
     elif soma_dealer > 21 and soma_usuario <= 21:
         print("Você venceu, parabéns")
-    elif soma_dealer == soma_usuario and soma_dealer <= 21 and soma_usuario <= 21: 
+    elif soma_dealer == soma_usuario and soma_dealer <= 21 and soma_usuario <= 21:
         print("Deu empate")
     elif soma_dealer > soma_usuario and soma_dealer <= 21:
         print(f"A soma de suas cartas {soma_usuario}. É menor do que as da casa {soma_dealer}")
         print("A casa venceu. Próxima?")
-    return cartas_usuario, cartas_dealer, soma_usuario, soma_dealer
-
 
 def distribuir_carta_dealer(cartas_dealer):
     """Insere uma carta no monte da casa"""
