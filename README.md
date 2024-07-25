@@ -17,6 +17,8 @@ Este repositório contém diversos projetos em Python desenvolvidos para fins de
   - [Como rodar o Projeto?](#como-rodar-o-projeto-5)
 - Projeto 7 - [Blackjack 21](#blackjack-21)
   - [Como rodar o Projeto?](#como-rodar-o-projeto-6)
+- Projeto 8 - [Quem tem mais?](#quem-tem-mais)
+  - [Como rodar o Projeto?](#como-rodar-o-projeto-7)
 ## Tesouro Perdido
 Descrição: Há um tesouro perdido na ilha, será que você consegue adivinhar os caminhos certos para chegar até o tesouro? 
 ### Como rodar o Projeto?
@@ -73,3 +75,12 @@ Descrição: Já jogou 21? Que tal ter a experiência de fazer isso pelo termina
 2. Abra a pasta com os projetos `cd .\Projetos-em-Python\`
 3. Abra a pasta do respectivo projeto, nesse caso, projeto7 `cd .\projeto7\`
 4. Execute usando `python .\projeto7.py`
+
+## Quem tem mais?
+Descrição: Aparecerá duas entidades (Não são espíritos) e você precisa adivinhar qual delas tem mais seguidores
+no instagram.
+### Como rodar o Projeto? 
+1. Abra o terminal e digite: `https://github.com/RodrigoBettio/Projetos-em-Python.git`
+2. Abra a pasta com os projetos `cd .\Projetos-em-Python\`
+3. Abra a pasta do respectivo projeto, nesse caso, projeto7 `cd .\projeto8\`
+4. Execute usando `python .\projeto8.py`
