@@ -19,6 +19,9 @@ Este repositório contém diversos projetos em Python desenvolvidos para fins de
   - [Como rodar o Projeto?](#como-rodar-o-projeto-6)
 - Projeto 8 - [Quem tem mais?](#quem-tem-mais)
   - [Como rodar o Projeto?](#como-rodar-o-projeto-7)
+- Projeto 9 - [Questionário de Informática](#questionário-de-informática)
+  - [Como rodar o Projeto?](#como-rodar-o-projeto-8)
+
 ## Tesouro Perdido
 Descrição: Há um tesouro perdido na ilha, será que você consegue adivinhar os caminhos certos para chegar até o tesouro? 
 ### Como rodar o Projeto?
@@ -82,5 +85,13 @@ no instagram.
 ### Como rodar o Projeto? 
 1. Abra o terminal e digite: `https://github.com/RodrigoBettio/Projetos-em-Python.git`
 2. Abra a pasta com os projetos `cd .\Projetos-em-Python\`
-3. Abra a pasta do respectivo projeto, nesse caso, projeto7 `cd .\projeto8\`
+3. Abra a pasta do respectivo projeto, nesse caso, projeto8 `cd .\projeto8\`
 4. Execute usando `python .\projeto8.py`
+
+## Questionário de Informática
+Descrição: Teste seus conhecimentos em informática com algumas questões
+### Como rodar o Projeto? 
+1. Abra o terminal e digite: `https://github.com/RodrigoBettio/Projetos-em-Python.git`
+2. Abra a pasta com os projetos `cd .\Projetos-em-Python\`
+3. Abra a pasta do respectivo projeto, nesse caso, projeto9 `cd .\projeto9\`
+4. Execute usando `python .\projeto9.py`
